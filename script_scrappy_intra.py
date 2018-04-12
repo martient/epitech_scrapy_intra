@@ -29,12 +29,19 @@ def main():
 		pass
 	pass
 
+
+print("Welcome in scrappy intra")
+print("Version: " + config.get('PROGRAMME INFO', 'version'))
+print("Created by " + config.get('PROGRAMME INFO', 'author'))
+print("")
+print("")
+
 if url is 'changeme':
 	url = url + "?format=json"
 	main()
 	pass
 else:
 	print("Error: Scrappy can't acces to the web service intra.epitech.eu, please enter yout Oauth link")
-	print()
+	print("")
 	print("Go to: https://intra.epitech.eu/admin/autolog")
 	pass
