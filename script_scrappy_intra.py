@@ -23,25 +23,22 @@ def main():
 	response = urllib.urlopen(url)
 	data = json.loads(response.read())
 	i = 0
-	while i < 10:
+	while i < len(data["board"]["projets"]):
 		print(data["board"]["projets"][i]["title"] + " - START:" + data["board"]["projets"][i]["timeline_start"] + " - END:" + data["board"]["projets"][i]["timeline_end"])
 		i += 1
 		pass
 	pass
 
-
 print("Welcome in scrappy intra")
 print("Version: " + config.get('PROGRAMME INFO', 'version'))
-print("Created by " + config.get('PROGRAMME INFO', 'author'))
-print("")
-print("")
+print("Created by " + config.get('PROGRAMME INFO', 'author') + "\n\n")
 
 if url is 'changeme':
-	url = url + "?format=json"
-	main()
+	print("Error: Scrappy can't acces to the web service intra.epitech.eu, please enter yout Oauth link\n")
+	print("Go to: https://intra.epitech.eu/admin/autolog")
 	pass
 else:
-	print("Error: Scrappy can't acces to the web service intra.epitech.eu, please enter yout Oauth link")
-	print("")
-	print("Go to: https://intra.epitech.eu/admin/autolog")
+	url = url + "?format=json"
+	main()
+	print("\nHave a nice day !")
 	pass
