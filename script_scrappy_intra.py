@@ -23,8 +23,12 @@ def main():
 	response = urllib.urlopen(url)
 	data = json.loads(response.read())
 	i = 0
+	dead_line = 0
 	while i < len(data["board"]["projets"]):
-		print(data["board"]["projets"][i]["title"] + " - START:" + data["board"]["projets"][i]["timeline_start"] + " - END:" + data["board"]["projets"][i]["timeline_end"])
+		dead_line = float(data["board"]["projets"][i]["timeline_barre"])
+		if dead_line < 100.0000:
+			print(data["board"]["projets"][i]["title"] + " - START:" + data["board"]["projets"][i]["timeline_start"] + " - END:" + data["board"]["projets"][i]["timeline_end"] + " - POURCENTAGE: " + data["board"]["projets"][i]["timeline_barre"])
+			pass
 		i += 1
 		pass
 	pass
