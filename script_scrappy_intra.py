@@ -42,7 +42,7 @@ if url is 'changeme':
 	print("Go to: https://intra.epitech.eu/admin/autolog")
 	pass
 else:
-	url = url + "?format=json"
+	url = url + "/?format=json"
 	main()
 	print("\nHave a nice day !")
 	pass
